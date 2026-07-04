@@ -11,8 +11,35 @@ function getGreeting(): { text: string; emoji: string } {
   return { text: "Good Evening", emoji: "🌙" };
 }
 
+function AnimatedHeading({ text }: { text: string }) {
+  const characters = text.split("");
+
+  return (
+    <span aria-label={text}>
+      {characters.map((char, index) => (
+        <motion.span
+          key={`${char}-${index}`}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.35,
+            delay: index * 0.045,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="inline-block"
+          aria-hidden
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 export default function Hero() {
   const greeting = getGreeting();
+  const headingText = `Hi, I'm ${siteConfig.name}`;
+  const descriptionDelay = headingText.length * 0.045 + 0.25;
 
   return (
     <section
@@ -35,14 +62,13 @@ export default function Hero() {
           </p>
 
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-heading sm:text-6xl lg:text-7xl">
-            Hi, I&apos;m{" "}
-            <span className="text-heading">{siteConfig.name}</span>
+            <AnimatedHeading text={headingText} />
           </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
+            transition={{ delay: descriptionDelay, duration: 0.7 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
           >
             {siteConfig.description}
@@ -51,7 +77,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: descriptionDelay + 0.2, duration: 0.6 }}
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <a href="#projects" className="btn-primary">
@@ -73,7 +99,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: descriptionDelay + 0.35, duration: 0.6 }}
             className="mt-10 flex items-center justify-center gap-5"
           >
             <a
@@ -108,7 +134,7 @@ export default function Hero() {
           href="#about"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
+          transition={{ delay: descriptionDelay + 0.6, duration: 0.6 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 transition-colors hover:text-slate-900 dark:hover:text-white"
           aria-label="Scroll to about"
         >

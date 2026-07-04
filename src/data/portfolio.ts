@@ -305,7 +305,7 @@ export const projects = [
     image: voyageVirtuoso.src,
     tags: ["Kotlin", "Jetpack Compose", "MVI", "Ktor", "Gemini AI"],
     github: "https://github.com/KrishnaPensalwar",
-    link: undefined,
+    link: "https://github.com/KrishnaPensalwar",
   },
   {
     title: "Clean City Smart City",
@@ -315,7 +315,7 @@ export const projects = [
     image: cleanCity.src,
     tags: ["Kotlin", "Jetpack Compose", "Firebase", "Maps", "MVVM"],
     github: "https://github.com/KrishnaPensalwar/CleanCityApp",
-    link: undefined,
+    link: "https://github.com/KrishnaPensalwar",
   },
   {
     title: "AI Code Review Plugin",
@@ -325,6 +325,6 @@ export const projects = [
     image: aiPlugin.src,
     tags: ["Kotlin", "IntelliJ SDK", "Gemini AI", "Ktor"],
     github: "https://github.com/KrishnaPensalwar",
-    link: undefined,
+    link: "https://github.com/KrishnaPensalwar",
   },
 ];

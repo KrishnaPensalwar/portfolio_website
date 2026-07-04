@@ -1,14 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
-import {
-  projects,
-  getProjectUrl,
-  isValidProjectUrl,
-} from "@/data/portfolio";
+import { projects, isValidProjectUrl } from "@/data/portfolio";
 
 export default function Projects() {
   return (
@@ -17,29 +12,20 @@ export default function Projects() {
         <SectionHeading title="Android Projects" emoji="📱" />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => {
-            const projectUrl = getProjectUrl(project);
-            const hasLiveDemo = isValidProjectUrl(project.link);
+          {projects.map((project) => {
+            const hasProjectLink = isValidProjectUrl(project.link);
             const hasGithub = isValidProjectUrl(project.github);
 
             return (
-              <motion.article
+              <article
                 key={project.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.1,
-                  duration: 0.5,
-                }}
-                whileHover={{ y: -8 }}
-                className="group glass-card overflow-hidden rounded-2xl transition-all duration-300 hover:border-slate-300 hover:shadow-xl dark:hover:border-slate-600"
+                className="glass-card flex flex-col overflow-hidden rounded-2xl"
               >
-                <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <div className="relative h-56 shrink-0 overflow-hidden bg-slate-100 dark:bg-slate-900">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -57,8 +43,8 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="flex h-full flex-col p-6">
-                  <p className="mb-6 text-sm leading-7 text-muted">
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="mb-4 text-sm leading-7 text-muted">
                     {project.description}
                   </p>
 
@@ -70,32 +56,36 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="mt-auto flex items-center gap-3">
-                    <a
-                      href={projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
-                    >
-                      {hasLiveDemo ? "View Project" : "View on GitHub"}
-                      <ExternalLink size={16} />
-                    </a>
+                  {(hasProjectLink || hasGithub) && (
+                    <div className="mt-auto flex items-center gap-3 pt-2">
+                      {hasProjectLink && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary min-h-10 flex-1 px-4 py-2"
+                        >
+                          View Project
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
 
-                    {hasGithub && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} on GitHub`}
-                        title="Open GitHub repository"
-                        className="rounded-lg border border-slate-200 p-2 text-slate-600 transition-all duration-300 hover:border-slate-400 hover:text-slate-900 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
-                  </div>
+                      {/* {hasGithub && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} on GitHub`}
+                          title="Open GitHub repository"
+                          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-600 dark:border-slate-600 dark:text-slate-200"
+                        >
+                          <Github size={20} />
+                        </a>
+                      )} */}
+                    </div>
+                  )}
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>
