@@ -33,7 +33,7 @@ export default function Projects() {
                   duration: 0.5,
                 }}
                 whileHover={{ y: -8 }}
-                className="group glass-card overflow-hidden rounded-2xl transition-all duration-300 hover:border-primary-500/40 hover:shadow-xl hover:shadow-primary-500/10"
+                className="group glass-card overflow-hidden rounded-2xl transition-all duration-300 hover:border-slate-300 hover:shadow-xl dark:hover:border-slate-600"
               >
                 <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-900">
                   <img
@@ -50,7 +50,7 @@ export default function Projects() {
                     </h3>
 
                     {project.category && (
-                      <p className="mt-1 text-xs text-primary-300">
+                      <p className="mt-1 text-xs text-slate-300">
                         {project.category}
                       </p>
                     )}
@@ -75,7 +75,7 @@ export default function Projects() {
                       href={projectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:from-primary-500 hover:to-primary-400"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
                     >
                       {hasLiveDemo ? "View Project" : "View on GitHub"}
                       <ExternalLink size={16} />
@@ -88,7 +88,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         aria-label={`${project.title} on GitHub`}
                         title="Open GitHub repository"
-                        className="rounded-lg border border-slate-200 p-2 text-slate-600 transition-all duration-300 hover:border-primary-400 hover:text-primary-600 dark:border-slate-600 dark:text-slate-200 dark:hover:border-primary-500 dark:hover:text-white"
+                        className="rounded-lg border border-slate-200 p-2 text-slate-600 transition-all duration-300 hover:border-slate-400 hover:text-slate-900 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white"
                       >
                         <Github size={20} />
                       </a>

@@ -47,9 +47,9 @@ export default function WhatIDo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group glass-card p-6 transition-all duration-300 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5"
+                className="group glass-card p-6 transition-all duration-300 hover:border-slate-300 hover:shadow-lg dark:hover:border-slate-600"
               >
-                <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-3 text-primary-400 transition-transform group-hover:scale-110">
+                <div className="mb-4 inline-flex rounded-xl bg-slate-100 p-3 text-heading transition-transform group-hover:scale-110 dark:bg-slate-800">
                   <Icon size={24} />
                 </div>
                 <h3 className="mb-2 font-display text-lg font-semibold text-heading">

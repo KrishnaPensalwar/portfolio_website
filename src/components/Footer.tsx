@@ -24,14 +24,14 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-3 text-sm text-muted lg:items-end">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-primary-600 dark:hover:text-primary-400"
+              className="inline-flex items-center gap-2 transition-colors hover:text-heading"
             >
               <Mail size={16} />
               {siteConfig.email}
             </a>
             <a
               href={getPhoneHref()}
-              className="inline-flex items-center gap-2 transition-colors hover:text-primary-600 dark:hover:text-primary-400"
+              className="inline-flex items-center gap-2 transition-colors hover:text-heading"
             >
               <Phone size={16} />
               {getPhoneDisplay()}
@@ -43,7 +43,7 @@ export default function Footer() {
               href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-slate-200 p-2.5 text-muted transition-all hover:border-primary-400 hover:text-primary-600 dark:border-white/10 dark:hover:border-primary-500/30 dark:hover:text-primary-400"
+              className="rounded-lg border border-slate-200 p-2.5 text-muted transition-all hover:border-slate-400 hover:text-heading dark:border-white/10 dark:hover:border-slate-500 dark:hover:text-white"
               aria-label="GitHub"
             >
               <Github size={18} />
@@ -52,7 +52,7 @@ export default function Footer() {
               href={siteConfig.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-slate-200 p-2.5 text-muted transition-all hover:border-primary-400 hover:text-primary-600 dark:border-white/10 dark:hover:border-primary-500/30 dark:hover:text-primary-400"
+              className="rounded-lg border border-slate-200 p-2.5 text-muted transition-all hover:border-slate-400 hover:text-heading dark:border-white/10 dark:hover:border-slate-500 dark:hover:text-white"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />

@@ -1,0 +1,69 @@
+/**
+ * Pixel Pet — styles
+ * The pet container uses translate3d for GPU-accelerated movement.
+ */
+
+#pixel-pet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  /* Center sprite on position point */
+  margin-left: calc(var(--pet-size, 32px) / -2);
+  margin-top: calc(var(--pet-size, 32px) / -2);
+}
+
+#pixel-pet-sprite {
+  width: var(--pet-size, 32px);
+  height: var(--pet-size, 32px);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-repeat: no-repeat;
+  transform-origin: center center;
+}
+
+/* Subtle shadow beneath pet */
+#pixel-pet::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 20px;
+  height: 4px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.dark #pixel-pet::after {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Sleeping zzz indicator (optional decorative) */
+#pixel-pet.sleeping::before {
+  content: "z";
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(120, 120, 120, 0.7);
+  animation: pet-zzz 1.5s ease-in-out infinite;
+}
+
+@keyframes pet-zzz {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}

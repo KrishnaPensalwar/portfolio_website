@@ -28,7 +28,7 @@ export default function About() {
 
         <div className="mx-auto max-w-4xl">
           <div className="glass-card p-8 sm:p-10">
-            <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
+            <p className="mb-6 text-sm font-medium text-heading">
               {greeting} {emoji}
             </p>
             <div className="space-y-5 text-base leading-relaxed text-body sm:text-lg">

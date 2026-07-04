@@ -21,8 +21,8 @@ export default function Hero() {
     >
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-pattern bg-[size:48px_48px] opacity-40" />
-      <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary-600/20 blur-[128px]" />
-      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-accent-500/15 blur-[128px]" />
+      <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-slate-400/10 blur-[128px]" />
+      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-slate-400/10 blur-[128px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
         <motion.div
@@ -36,7 +36,7 @@ export default function Hero() {
 
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-heading sm:text-6xl lg:text-7xl">
             Hi, I&apos;m{" "}
-            <span className="gradient-text">{siteConfig.name}</span>
+            <span className="text-heading">{siteConfig.name}</span>
           </h1>
 
           <motion.p
@@ -109,7 +109,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 transition-colors hover:text-primary-500 dark:hover:text-primary-400"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 transition-colors hover:text-slate-900 dark:hover:text-white"
           aria-label="Scroll to about"
         >
           <ArrowDown size={24} className="animate-bounce" />

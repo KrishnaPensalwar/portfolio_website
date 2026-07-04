@@ -83,24 +83,24 @@ export default function Contact() {
               <div className="space-y-4">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 text-sm text-body transition-colors hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center gap-3 text-sm text-body transition-colors hover:text-heading"
                 >
-                  <div className="rounded-lg bg-primary-100 p-2 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
+                  <div className="rounded-lg bg-slate-100 p-2 text-heading dark:bg-slate-800">
                     <Mail size={18} />
                   </div>
                   {siteConfig.email}
                 </a>
                 <a
                   href={getPhoneHref()}
-                  className="flex items-center gap-3 text-sm text-body transition-colors hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center gap-3 text-sm text-body transition-colors hover:text-heading"
                 >
-                  <div className="rounded-lg bg-primary-100 p-2 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
+                  <div className="rounded-lg bg-slate-100 p-2 text-heading dark:bg-slate-800">
                     <Phone size={18} />
                   </div>
                   {getPhoneDisplay()}
                 </a>
                 <div className="flex items-center gap-3 text-sm text-body">
-                  <div className="rounded-lg bg-primary-100 p-2 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
+                  <div className="rounded-lg bg-slate-100 p-2 text-heading dark:bg-slate-800">
                     <MapPin size={18} />
                   </div>
                   India
@@ -117,7 +117,7 @@ export default function Contact() {
           >
             {submitted ? (
               <div className="glass-card flex flex-col items-center justify-center p-12 text-center">
-                <CheckCircle size={48} className="mb-4 text-primary-500" />
+                <CheckCircle size={48} className="mb-4 text-heading" />
                 <h3 className="mb-2 font-display text-xl font-semibold text-heading">
                   Message Sent!
                 </h3>

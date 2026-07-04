@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Pet Demo</title>
+    <link rel="stylesheet" href="pet.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background: #fafafa;
+        color: #252525;
+        min-height: 200vh;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: #909092;
+        max-width: 32rem;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pixel Pet Demo</h1>
+    <p>
+      Move your cursor around. The pet chases it with smooth lerp movement,
+      walks, sits after 2s idle, and sleeps after 8s. Scroll to confirm it
+      stays fixed on screen.
+    </p>
+    <script src="pet.js"></script>
+  </body>
+</html>

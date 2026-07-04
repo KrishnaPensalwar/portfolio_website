@@ -1,6 +1,7 @@
 import voyageVirtuoso from "@/assets/voyage_virtuoso.png";
 import cleanCity from "@/assets/clean_city.png";
 import aiPlugin from "@/assets/ai_plugin.png";
+import { skillIcons, type SkillIcon } from "@/data/skillIcons";
 
 export const siteConfig = {
   name: "Krishna Pensalwar",
@@ -146,58 +147,108 @@ export const whatIDo = [
 
 /* ---------------- SKILLS ---------------- */
 
-export const skillCategories = [
+export type Skill = {
+  name: string;
+  proficiency: number;
+  icon: SkillIcon;
+};
+
+export type SkillCategory = {
+  id: string;
+  label: string;
+  skills: Skill[];
+};
+
+export const skillCategories: SkillCategory[] = [
   {
     id: "android",
     label: "Android",
     skills: [
-      { name: "Kotlin", proficiency: 95 },
-      { name: "Jetpack Compose", proficiency: 92 },
-      { name: "Android SDK", proficiency: 90 },
-      { name: "Jetpack Libraries", proficiency: 88 },
-      { name: "Material Design 3", proficiency: 90 },
+      { name: "Kotlin", proficiency: 95, icon: skillIcons.kotlin },
+      { name: "Android", proficiency: 92, icon: skillIcons.android },
+      {
+        name: "Jetpack Compose",
+        proficiency: 92,
+        icon: skillIcons.jetpackCompose,
+      },
+      { name: "Android SDK", proficiency: 90, icon: skillIcons.androidSdk },
+      {
+        name: "Jetpack Libraries",
+        proficiency: 88,
+        icon: skillIcons.jetpackLibraries,
+      },
+      {
+        name: "Material Design 3",
+        proficiency: 90,
+        icon: skillIcons.materialDesign3,
+      },
     ],
   },
   {
     id: "architecture",
     label: "Architecture",
     skills: [
-      { name: "Clean Architecture", proficiency: 90 },
-      { name: "MVVM", proficiency: 92 },
-      { name: "MVI", proficiency: 88 },
-      { name: "Repository Pattern", proficiency: 90 },
-      { name: "Dependency Injection (Koin)", proficiency: 85 },
+      {
+        name: "Clean Architecture",
+        proficiency: 90,
+        icon: skillIcons.cleanArchitecture,
+      },
+      { name: "MVVM", proficiency: 92, icon: skillIcons.mvvm },
+      { name: "MVI", proficiency: 88, icon: skillIcons.mvi },
+      {
+        name: "Repository Pattern",
+        proficiency: 90,
+        icon: skillIcons.repositoryPattern,
+      },
+      {
+        name: "Dependency Injection (Koin)",
+        proficiency: 85,
+        icon: skillIcons.koin,
+      },
     ],
   },
   {
     id: "languages",
     label: "Languages",
     skills: [
-      { name: "Kotlin", proficiency: 95 },
-      { name: "Java", proficiency: 85 },
-      { name: "SQL", proficiency: 80 },
+      { name: "Kotlin", proficiency: 95, icon: skillIcons.kotlin },
+      { name: "Java", proficiency: 85, icon: skillIcons.java },
+      { name: "SQL", proficiency: 80, icon: skillIcons.sql },
     ],
   },
   {
     id: "networking",
     label: "Networking & Data",
     skills: [
-      { name: "Ktor Client", proficiency: 90 },
-      { name: "REST APIs", proficiency: 92 },
-      { name: "Kotlin Coroutines", proficiency: 90 },
-      { name: "Flow & StateFlow", proficiency: 88 },
-      { name: "Room Database", proficiency: 85 },
+      { name: "Ktor Client", proficiency: 90, icon: skillIcons.ktor },
+      { name: "REST APIs", proficiency: 92, icon: skillIcons.restApis },
+      {
+        name: "Kotlin Coroutines",
+        proficiency: 90,
+        icon: skillIcons.coroutines,
+      },
+      {
+        name: "Flow & StateFlow",
+        proficiency: 88,
+        icon: skillIcons.flowStateFlow,
+      },
+      { name: "Room Database", proficiency: 85, icon: skillIcons.room },
     ],
   },
   {
     id: "tools",
     label: "Tools",
     skills: [
-      { name: "Android Studio", proficiency: 95 },
-      { name: "Git & GitHub", proficiency: 90 },
-      { name: "Firebase", proficiency: 82 },
-      { name: "Postman", proficiency: 85 },
-      { name: "Figma", proficiency: 75 },
+      {
+        name: "Android Studio",
+        proficiency: 95,
+        icon: skillIcons.androidStudio,
+      },
+      { name: "Git", proficiency: 90, icon: skillIcons.git },
+      { name: "GitHub", proficiency: 90, icon: skillIcons.github },
+      { name: "Firebase", proficiency: 82, icon: skillIcons.firebase },
+      { name: "Postman", proficiency: 85, icon: skillIcons.postman },
+      { name: "Figma", proficiency: 75, icon: skillIcons.figma },
     ],
   },
 ];

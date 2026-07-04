@@ -30,11 +30,11 @@ export default function Navbar() {
         <a
           href="#home"
           aria-label="Home"
-          className="group flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200/80 bg-white/80 transition-all duration-300 hover:scale-110 hover:border-primary-500 hover:bg-primary-50 dark:border-white/10 dark:bg-slate-900/80 dark:hover:border-primary-500 dark:hover:bg-primary-500/10"
+          className="group flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200/80 bg-white/80 transition-all duration-300 hover:scale-110 hover:border-slate-400 hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900/80 dark:hover:border-slate-500 dark:hover:bg-slate-800"
         >
           <House
             size={22}
-            className="text-heading transition-all duration-300 group-hover:text-primary-500"
+            className="text-heading transition-all duration-300"
             strokeWidth={2.2}
           />
         </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block rounded-lg px-4 py-3 text-sm font-medium text-body transition-colors hover:bg-primary-50 hover:text-primary-700 dark:hover:bg-white/5 dark:hover:text-white"
+                    className="block rounded-lg px-4 py-3 text-sm font-medium text-body transition-colors hover:bg-slate-100 hover:text-heading dark:hover:bg-white/5 dark:hover:text-white"
                     {...(link.external
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
