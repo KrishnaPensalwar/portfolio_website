@@ -15,8 +15,9 @@ export default function Skills() {
     <AnimatedSection id="skills" className="section-padding">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
-          title="Skills & Technologies"
-          subtitle="Tools and technologies I use to build modern Android applications."
+          title="Technical Stack & Mastery"
+          subtitle="Core frameworks, architecture patterns, and engineering tools I leverage to build scalable Android applications."
+          emoji="⚡"
         />
 
         {/* Category tabs */}
@@ -51,15 +52,15 @@ export default function Skills() {
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-muted">
-                  Technologies
+                  Category Stack
                 </p>
-                <h3 className="mt-1 font-display text-xl font-semibold text-heading">
+                <h3 className="mt-1 font-display text-2xl font-bold text-heading">
                   {activeCategory.label}
                 </h3>
               </div>
 
-              <span className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                {activeCategory.skills.length} skills
+              <span className="rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                {activeCategory.skills.length} core skills
               </span>
             </div>
 
@@ -89,3 +90,4 @@ export default function Skills() {
     </AnimatedSection>
   );
 }
+
