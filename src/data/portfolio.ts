@@ -394,8 +394,8 @@ export const projects: ProjectDetail[] = [
       "A citizen engagement Android application for reporting civic issues, tracking complaints, and improving communication with municipal systems.",
     image: cleanCity.src,
     tags: ["Kotlin", "Jetpack Compose", "Firebase", "Maps", "MVVM"],
-    github: "https://github.com/KrishnaPensalwar/CleanCityApp",
-    link: "https://github.com/KrishnaPensalwar/CleanCityApp",
+    github: "https://github.com/KrishnaPensalwar/CleanCity",
+    link: "https://github.com/KrishnaPensalwar/CleanCity",
     problem:
       "Citizens in urban areas face friction when trying to report local infrastructure damage, sanitation issues, or garbage accumulation. Municipal bodies struggle with duplicate complaints and inaccurate geolocation mapping.",
     solution:
